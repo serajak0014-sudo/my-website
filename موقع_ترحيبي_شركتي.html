@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-lang-en="Welcome — Your Company" data-lang-ar="مرحباً بكم — شركتي">مرحباً بكم — شركتي</title>
+  <style>
+    :root{
+      --bg:#f7f8fb; --card:#ffffff; --accent:#0066cc; --muted:#6b7280; --radius:14px; --maxw:1100px;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+    html,body{height:100%;}
+    body{margin:0; background:var(--bg); color:#0f1724; -webkit-font-smoothing:antialiased; display:flex; align-items:center; justify-content:center; padding:32px;}
+    .container{width:100%; max-width:var(--maxw);} header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00a3ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
+    .lang-switch{display:flex;gap:8px}
+    .lang-btn{border:1px solid #dbeafe;padding:8px 10px;border-radius:10px;background:white;cursor:pointer}
+
+    .hero{background:linear-gradient(180deg, rgba(0,102,204,0.06), transparent);padding:34px;border-radius:var(--radius);display:flex;gap:28px;align-items:center}
+    .hero-left{flex:1}
+    .eyebrow{color:var(--accent);font-weight:700;margin-bottom:8px}
+    h1{margin:0 0 12px 0;font-size:28px;line-height:1.15}
+    p.lead{margin:0 0 18px 0;color:var(--muted)}
+    .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(12,24,44,0.06)}
+    .service-title{font-weight:800;margin-bottom:6px}
+    .service-desc{color:var(--muted);font-size:14px}
+
+    .hero-right{width:340px}
+    .contact-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #f3f6fb);} .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* language-specific visibility */
+    .lang-en{display:none}
+    [dir="ltr"] .lang-en{display:block}
+    [dir="ltr"] .lang-ar{display:none}
+
+    @media (max-width:720px){body{padding:18px}header{flex-direction:column;align-items:flex-start;gap:12px}.hero{flex-direction:column}.hero-right{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div class="brand">
+          <div class="logo">ش</div>
+          <div>
+            <div style="font-weight:800" data-lang-ar>اسم شركتك</div>
+            <div style="font-weight:800" class="lang-en">Your Company</div>
+            <div class="small" data-lang-ar>حلول مهنية لاحتياجاتك</div>
+            <div class="small lang-en">Professional solutions for your needs</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px">
+        <nav>
+          <a href="#services" data-lang-ar>الخدمات</a>
+          <a href="#about" data-lang-ar>حولنا</a>
+          <a href="#contact" data-lang-ar>تواصل</a>
+          <a href="#services" class="lang-en">Services</a>
+          <a href="#about" class="lang-en">About</a>
+          <a href="#contact" class="lang-en">Contact</a>
+        </nav>
+
+        <div class="lang-switch" role="group" aria-label="Language switch">
+          <button class="lang-btn" onclick="setLang('ar')">العربية</button>
+          <button class="lang-btn" onclick="setLang('en')">English</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" role="banner">
+      <div class="hero-left">
+        <div class="eyebrow" data-lang-ar>خدمات احترافية</div>
+        <div class="eyebrow lang-en">Professional Services</div>
+
+        <h1>
+          <span data-lang-ar>نحن نبني حلولاً تساعد أعمالك على النمو</span>
+          <span class="lang-en">We build solutions that help your business grow</span>
+        </h1>
+
+        <p class="lead">
+          <span data-lang-ar>شركتنا تقدم خدمات متكاملة في التصميم والتطوير والاستشارات — خبرة طويلة وفريق متخصص لضمان تنفيذ سريع وجودة عالية.</span>
+          <span class="lang-en">We offer end-to-end design, development and consulting — experienced team ensuring fast delivery and high quality.</span>
+        </p>
+
+        <a class="cta" href="#contact">
+          <span data-lang-ar>اطلب عرض سعر</span>
+          <span class="lang-en">Get a Quote</span>
+        </a>
+
+        <div id="services" style="margin-top:18px">
+          <div class="services">
+            <div class="card">
+              <div class="service-title" data-lang-ar>تصميم واجهات المستخدم</div>
+              <div class="service-title lang-en">UI / UX Design</div>
+              <div class="service-desc" data-lang-ar>تصاميم بسيطة، عملية، وتجربة مستخدم مُحسّنة لرفع تفاعل الزوار.</div>
+              <div class="service-desc lang-en">Simple, functional designs and optimized UX to increase engagement.</div>
+            </div>
+
+            <div class="card">
+              <div class="service-title" data-lang-ar>تطوير ويب و تطبيقات</div>
+              <div class="service-title lang-en">Web & App Development</div>
+              <div class="service-desc" data-lang-ar>تطبيقات متجاوبة وسريعة باستخدام أحدث تقنيات الويب.</div>
+              <div class="service-desc lang-en">Responsive, fast applications built with modern web technologies.</div>
+            </div>
+
+            <div class="card">
+              <div class="service-title" data-lang-ar>استشارات تقنيّة</div>
+              <div class="service-title lang-en">Technical Consulting</div>
+              <div class="service-desc" data-lang-ar>تحليل بنّاء وخطط تنفيذية لتحويل الفكرة لمنتج ناجح.</div>
+              <div class="service-desc lang-en">Actionable analysis and roadmaps to turn ideas into successful products.</div>
+            </div>
+
+            <div class="card">
+              <div class="service-title" data-lang-ar>دعم وصيانة</div>
+              <div class="service-title lang-en">Support & Maintenance</div>
+              <div class="service-desc" data-lang-ar>باقة دعم تقنية للحفاظ على أداء منتجك على الدوام.</div>
+              <div class="service-desc lang-en">Ongoing support plans to keep your product performing.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="contact-card card">
+          <div style="font-weight:800;margin-bottom:8px">
+            <span data-lang-ar>تواصل معنا</span>
+            <span class="lang-en">Contact Us</span>
+          </div>
+
+          <div class="small"><span data-lang-ar>العنوان:</span> <span data-lang-ar>مدينتك، شارعك</span><span class="lang-en">Address: Your City, Your Street</span></div>
+          <div class="small"><span data-lang-ar>الهاتف:</span> <span data-lang-ar>+216 12 345 678</span><span class="lang-en">Phone: +216 12 345 678</span></div>
+          <div class="small" style="margin-bottom:12px"><span data-lang-ar>البريد:</span> <span data-lang-ar>info@yourcompany.com</span><span class="lang-en">Email: info@yourcompany.com</span></div>
+
+          <form id="contact" onsubmit="handleSubmit(event)">
+            <div style="margin-bottom:8px">
+              <label class="small" data-lang-ar>الاسم</label>
+              <label class="small lang-en">Name</label><br>
+              <input name="name" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef9" placeholder="" data-placeholder-ar="الاسم" data-placeholder-en="Name" />
+            </div>
+            <div style="margin-bottom:8px">
+              <label class="small" data-lang-ar>الهاتف أو البريد</label>
+              <label class="small lang-en">Phone or Email</label><br>
+              <input name="contact" required style="width:100%;padding:8px;border-radius:8px;border:1px solid #e6eef9" placeholder="" data-placeholder-ar="الهاتف أو البريد" data-placeholder-en="Phone or Email" />
+            </div>
+            <div style="display:flex;gap:8px">
+              <button type="submit" class="cta" style="flex:1">
+                <span data-lang-ar>أرسل</span><span class="lang-en">Send</span>
+              </button>
+              <button type="button" onclick="window.location='#'" style="flex:1;border-radius:10px;border:1px solid #d5e6ff;padding:10px;background:white">
+                <span data-lang-ar>اتصل الآن</span><span class="lang-en">Call Now</span>
+              </button>
+            </div>
+            <div id="msg" class="small" style="margin-top:10px;color:green;display:none">
+              <span data-lang-ar>تم إرسال طلبك — شكرًا! سنتواصل معك قريبًا.</span>
+              <span class="lang-en">Your request has been sent — thank you! We'll contact you soon.</span>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:18px;display:flex;gap:18px;align-items:center">
+      <div style="flex:1" class="card">
+        <h3 style="margin-top:0"><span data-lang-ar>من نحن</span><span class="lang-en">About Us</span></h3>
+        <p class="small"><span data-lang-ar>شركتنا تأسست لتقديم حلول مبتكرة مع تركيز على جودة التنفيذ وسرعة التسليم. نعمل مع شركات ناشئة ومتوسطة لتصميم وبناء منتجات رقمية تحقق أهدافهم.</span>
+        <span class="lang-en">Our company was founded to deliver innovative solutions with focus on execution quality and fast delivery. We work with startups and SMEs to design and build digital products that meet their goals.</span></p>
+      </div>
+      <div style="width:300px" class="card">
+        <h4 style="margin-top:0"><span data-lang-ar>قيمنا</span><span class="lang-en">Our Values</span></h4>
+        <ul class="small">
+          <li><span data-lang-ar>الشفافية</span><span class="lang-en">Transparency</span></li>
+          <li><span data-lang-ar>الموثوقية</span><span class="lang-en">Reliability</span></li>
+          <li><span data-lang-ar>الابتكار</span><span class="lang-en">Innovation</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> <span data-lang-ar>اسم شركتك</span><span class="lang-en">Your Company</span> — <span data-lang-ar>جميع الحقوق محفوظة</span><span class="lang-en">All rights reserved</span>
+    </footer>
+  </div>
+
+  <script>
+    // إعداد اللغة الافتراضية
+    function setLang(lang){
+      document.documentElement.lang = (lang==='en')?'en':'ar';
+      document.documentElement.dir = (lang==='en')?'ltr':'rtl';
+
+      // عنوان الصفحة
+      const title = document.querySelector('title');
+      if(lang==='en') title.textContent = title.getAttribute('data-lang-en');
+      else title.textContent = title.getAttribute('data-lang-ar');
+
+      // تحكم بنصوص العنصر: نستخدم ظهور/إخفاء عبر dir في CSS
+
+      // تحديث placeholders الحقول
+      document.querySelectorAll('input[data-placeholder-ar]').forEach(inp=>{
+        inp.placeholder = (lang==='en')?inp.getAttribute('data-placeholder-en'):inp.getAttribute('data-placeholder-ar');
+      });
+    }
+
+    // إرسال نموذج تجريبي
+    function handleSubmit(e){
+      e.preventDefault();
+      document.getElementById('msg').style.display='block';
+      setTimeout(()=>{document.getElementById('msg').style.display='none'},4000);
+      e.target.reset();
+    }
+
+    // تهيئة: تحقق من لغة المتصفح ثم اضبط
+    (function init(){
+      const nav = navigator.language || navigator.userLanguage || 'ar';
+      const preferEn = /^en/i.test(nav);
+      setLang(preferEn ? 'en' : 'ar');
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <!-- ملاحظات تخصيص:
+    - استبدل "اسم شركتك" وبيانات الاتصال بالمحتوى الحقيقي.
+    - لربط النموذج: عدل handleSubmit ليستخدم fetch إلى سيرفرك أو لخدمة بريدية.
+    - لإضافة لوجو: استبدل عنصر .logo بصورة <img> مع تنسيق RTL/LTR مناسب.
+    - أرسل لي النصوص العربية أو الإنجليزية إن رغبت في ترجمة مخصصة أو تحسين الصياغة.
+  -->
+</body>
+</html>
